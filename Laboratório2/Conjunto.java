@@ -27,7 +27,7 @@ public class Conjunto{
 	}
 
 	boolean subconjunto(Conjunto A){
-		//This está contido em A
+		//O método faz a seguinte pergunta: O conjunto A está contido neste conjunto?
 		boolean pertence;
 		for(int i = 0;i<A.getIndex();i++){
 			pertence = false;
@@ -98,5 +98,12 @@ public class Conjunto{
 
 	int getElemento(int index){
 		return this.elementos[index];
+	}
+
+	void showElementos(){
+		for(int i = 0;i < this.index;i++){
+			System.out.printf(this.elementos[i]+ " ");
+		}
+		System.out.printf("\n");
 	}
 }

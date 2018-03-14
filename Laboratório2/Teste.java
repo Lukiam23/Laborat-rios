@@ -1,6 +1,6 @@
 public class Teste{
 	public static void main(String [] args){
-		Conjunto dezPrimeirosNaturais = new Conjunto(10);//1
+		Conjunto dezPrimeirosNaturais = new Conjunto(100);//1
 		Conjunto cincoPrimeirosPares = new Conjunto(5);//2
 		Conjunto cincoPrimeirosImpares = new Conjunto(5);//3
 		Conjunto dezPrimeirosPrimos = new Conjunto(10);//4
@@ -31,8 +31,10 @@ public class Teste{
 
 		//Se o conjunto 4 é subconjunto de si mesmo;
 		System.out.printf("Se o conjunto 4 é subconjunto de si mesmo? %b\n",dezPrimeirosPrimos.subconjunto(dezPrimeirosPrimos));	
-  
-
-		
+		//A pertinência dos conjuntos 2, 3 e 4 no conjunto 1;	
+  		System.out.printf("Conjunto 2 no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosPares));	
+  		System.out.printf("Conjunto 3 no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosImpares));	
+  		System.out.printf("Conjunto 4 no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(dezPrimeirosPrimos));
+  			
 	}
 }
