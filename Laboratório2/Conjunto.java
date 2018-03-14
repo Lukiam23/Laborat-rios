@@ -44,6 +44,7 @@ public class Conjunto{
 	}
 
 	Conjunto conjuntoUniao(Conjunto A){
+		//Retorna o conjunto União desse conjunto com A
 		Conjunto uniao;
 		int tamanho = A.getIndex() + this.index + 1;
 		uniao = new Conjunto(tamanho);
@@ -60,6 +61,7 @@ public class Conjunto{
 	}
 
 	Conjunto conjuntoIntersecao(Conjunto A){
+		//Retorna o conjunto intersecção desse conjunto com A
 		Conjunto intersecao;
 		int tamanho = A.getIndex() + this.index + 1;
 		intersecao = new Conjunto(tamanho);
@@ -74,7 +76,7 @@ public class Conjunto{
 	}
 
 	Conjunto conjuntoDiferenca(Conjunto A){
-		//This conjunto sem o elementos de A
+		//O método retorna os elementos deste conjunto sem os elementos de A
 		Conjunto intersecao = conjuntoIntersecao(A);
 		Conjunto diferenca = new Conjunto(this.index - intersecao.getIndex() + 1);
 		boolean pertence;
@@ -101,9 +103,16 @@ public class Conjunto{
 	}
 
 	void showElementos(){
+		//O método criada apenas para printar os elementos do conjunto na tela
 		for(int i = 0;i < this.index;i++){
-			System.out.printf(this.elementos[i]+ " ");
+			System.out.printf(this.elementos[i]+" ");
 		}
 		System.out.printf("\n");
+	}
+
+	boolean conjuntoVazio(){
+		//Essa o método retorna true se o conjunto estiver vazio e false caso contrário
+		boolean vazio = (this.index == 0) ? true : false;
+		return vazio;
 	}
 }

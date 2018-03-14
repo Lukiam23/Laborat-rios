@@ -37,11 +37,14 @@ public class Teste{
   		System.out.printf("Conjunto 3 está contido no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosImpares));	
   		System.out.printf("Conjunto 4 está contido no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(dezPrimeirosPrimos));
 
-  		//Se a união de 2 e 3 é igual ao conjunto 1;	
-
+  		//Se a união de 2 e 3 é igual ao conjunto 1;
   		Conjunto uniao = cincoPrimeirosImpares.conjuntoUniao(cincoPrimeirosPares);
   		boolean igualdade = (uniao.subconjunto(dezPrimeirosNaturais) && dezPrimeirosNaturais.subconjunto(uniao))? true : false;
   		System.out.printf("A união de 2 e 3 é igual a 1? %b\n",igualdade);
+
+  		//Se a intersecção dos conjuntos 1 e 2 é vazia;	
+  		Conjunto interseccao = dezPrimeirosNaturais.conjuntoIntersecao(cincoPrimeirosPares);
+  		System.out.printf("A intersecção de 1 e 2 é vazia? %b\n",interseccao.conjuntoVazio());
   	
 	}
 }
