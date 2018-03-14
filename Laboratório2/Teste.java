@@ -1,19 +1,19 @@
 public class Teste{
 	public static void main(String [] args){
-		Conjunto dezPrimeirosNaturais = new Conjunto(10);
-		Conjunto cincoPrimeirosPares = new Conjunto(5);
-		Conjunto cincoPrimeirosImpares = new Conjunto(5);
-		Conjunto dezPrimeirosPrimos = new Conjunto(10);
+		Conjunto dezPrimeirosNaturais = new Conjunto(10);//1
+		Conjunto cincoPrimeirosPares = new Conjunto(5);//2
+		Conjunto cincoPrimeirosImpares = new Conjunto(5);//3
+		Conjunto dezPrimeirosPrimos = new Conjunto(10);//4
 
-		for(int i = 0;i < 11;i++){
+		for(int i = 0;i < 10;i++){
 			dezPrimeirosNaturais.inserirElemento(i);
 		}
 		
-		for(int i = 0;i < 6;i=i+2){
+		for(int i = 0;i < 10;i=i+2){
 			cincoPrimeirosPares.inserirElemento(i);
 		}
 
-		for(int i = 1;i < 6;i=i+2){
+		for(int i = 1;i < 10;i=i+2){
 			cincoPrimeirosImpares.inserirElemento(i);
 		}
 
@@ -27,7 +27,12 @@ public class Teste{
 		dezPrimeirosPrimos.inserirElemento(17);
 		dezPrimeirosPrimos.inserirElemento(19);
 		dezPrimeirosPrimos.inserirElemento(23);
-		dezPrimeirosPrimos.inserirElemento(29);
+		
+
+		//Se o conjunto 4 é subconjunto de si mesmo;
+		System.out.printf("Se o conjunto 4 é subconjunto de si mesmo? %b\n",dezPrimeirosPrimos.subconjunto(dezPrimeirosPrimos));	
+  
+
 		
 	}
 }
