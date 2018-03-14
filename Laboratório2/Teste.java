@@ -45,6 +45,11 @@ public class Teste{
   		//Se a intersecção dos conjuntos 1 e 2 é vazia;	
   		Conjunto interseccao = dezPrimeirosNaturais.conjuntoIntersecao(cincoPrimeirosPares);
   		System.out.printf("A intersecção de 1 e 2 é vazia? %b\n",interseccao.conjuntoVazio());
+
+  		//Qual diferença entre os conjuntos 1 e 2;	
+  		Conjunto diferenca = dezPrimeirosNaturais.conjuntoDiferenca(cincoPrimeirosPares);
+  		//diferenca.showElementos();
+  
   	
 	}
 }
