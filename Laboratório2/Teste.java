@@ -31,10 +31,17 @@ public class Teste{
 
 		//Se o conjunto 4 é subconjunto de si mesmo;
 		System.out.printf("Se o conjunto 4 é subconjunto de si mesmo? %b\n",dezPrimeirosPrimos.subconjunto(dezPrimeirosPrimos));	
+		
 		//A pertinência dos conjuntos 2, 3 e 4 no conjunto 1;	
-  		System.out.printf("Conjunto 2 no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosPares));	
-  		System.out.printf("Conjunto 3 no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosImpares));	
-  		System.out.printf("Conjunto 4 no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(dezPrimeirosPrimos));
-  			
+  		System.out.printf("Conjunto 2 está contido no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosPares));	
+  		System.out.printf("Conjunto 3 está contido no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(cincoPrimeirosImpares));	
+  		System.out.printf("Conjunto 4 está contido no Conjunto 1 %b\n",dezPrimeirosNaturais.subconjunto(dezPrimeirosPrimos));
+
+  		//Se a união de 2 e 3 é igual ao conjunto 1;	
+
+  		Conjunto uniao = cincoPrimeirosImpares.conjuntoUniao(cincoPrimeirosPares);
+  		boolean igualdade = (uniao.subconjunto(dezPrimeirosNaturais) && dezPrimeirosNaturais.subconjunto(uniao))? true : false;
+  		System.out.printf("A união de 2 e 3 é igual a 1? %b\n",igualdade);
+  	
 	}
 }

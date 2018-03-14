@@ -43,7 +43,7 @@ public class Conjunto{
 		return true;
 	}
 
-	Conjunto conjuntoUnião(Conjunto A){
+	Conjunto conjuntoUniao(Conjunto A){
 		Conjunto uniao;
 		int tamanho = A.getIndex() + this.index + 1;
 		uniao = new Conjunto(tamanho);
