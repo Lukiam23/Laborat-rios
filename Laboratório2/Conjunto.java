@@ -80,12 +80,19 @@ public class Conjunto{
 		Conjunto intersecao = conjuntoIntersecao(A);
 		Conjunto diferenca = new Conjunto(this.index - intersecao.getIndex() + 1);
 		boolean pertence;
+
+		
 		for(int i = 0;i<this.index;i++){
-			for(int j = 0;j<intersecao.getIndex();j++){
-				System.out.printf("i:%d j:%d\n",i,j);
-				if(intersecao.getElemento(j) != this.elementos[i]){
-					diferenca.inserirElemento(this.elementos[i]);
+			boolean contido = false;
+			int j = 0;
+			while(j<intersecao.getIndex() && !contido){
+				if(intersecao.getElemento(j) == this.elementos[i]){
+					contido = true;
 				}
+				j++;
+			}
+			if(!contido){
+				diferenca.inserirElemento(this.elementos[i]);
 			}
 		}
 		return diferenca;

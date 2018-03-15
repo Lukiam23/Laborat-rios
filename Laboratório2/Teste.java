@@ -48,7 +48,7 @@ public class Teste{
 
   		//Qual diferença entre os conjuntos 1 e 2;	
   		Conjunto diferenca = dezPrimeirosNaturais.conjuntoDiferenca(cincoPrimeirosPares);
-  		//diferenca.showElementos();
+  		diferenca.showElementos();
   
   	
 	}
