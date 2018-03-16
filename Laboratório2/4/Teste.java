@@ -15,7 +15,24 @@ public class Teste{
 		for(int i = 0;i < 8;i++){
 			System.out.printf(produto[i].toStringParOrdenado()+" ");
 		}
+		System.out.printf("\n\n");
+		
+		System.out.printf("Conjunto A = {1, 2, 3, 4} ao quadrado: ");
+		produto = A.pordutoCartesiano(A);
+		for(int i = 0;i < 16;i++){
+			System.out.printf(produto[i].toStringParOrdenado()+" ");
+		}
+		System.out.printf("\n\n");
+
+		System.out.printf("Conjunto B = {2, 3} ao quadrado: ");
+		produto = B.pordutoCartesiano(B);
+		for(int i = 0;i < 4;i++){
+			System.out.printf(produto[i].toStringParOrdenado()+" ");
+		}
 		System.out.printf("\n");
+
+
+
 
 	}
 }
