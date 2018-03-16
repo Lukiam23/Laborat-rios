@@ -103,10 +103,10 @@ public class Conjunto{
 		int tamanho = this.tamanho*A.getTamanho();
 		ParOrdenado[] produtos = new ParOrdenado[tamanho];
 		int posicao = 0;
-		for(int i = 0;i < this.index;i++){
-			for(int j = 0;j < A.getIndex();j++){
+		for(int j = 0;j < A.getIndex();j++){
+			for(int i = 0;i < this.index;i++){
 				produtos[posicao] = new ParOrdenado(this.elementos[i],A.getElemento(j));
-				System.out.println(produtos[posicao].toStringParOrdenado());
+				posicao++;
 			} 
 		} 
 		return produtos;
