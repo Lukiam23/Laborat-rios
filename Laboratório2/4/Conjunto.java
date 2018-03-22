@@ -112,6 +112,34 @@ public class Conjunto{
 		return produtos;
 	}
 
+	Conjunto[] partes(){
+		Conjunto[] retorno = new Conjunto[(int) Math.pow(2,this.index)];
+		Conjunto primeiroElemento = new Conjunto(1);
+		primeiroElemento.inserirElemento(this.getElemento(0));
+		retorno[0] = primeiroElemento;
+		int j = 1;
+		if(this.index == 1){
+			return retorno;
+		}
+		else{
+			Conjunto conjuntoSemPrimeiro = new Conjunto(this.index);
+			for(int i = 1;i < this.index;i++){
+				conjuntoSemPrimeiro.inserirElemento(this.getElemento(i));
+			}
+			//conjuntoSemPrimeiro.showElementos();
+			for(Conjunto elemento : conjuntoSemPrimeiro.partes()){
+
+				retorno[j] = elemento;
+				j++;
+				retorno[j] = elemento.conjuntoUniao(primeiroElemento);
+				j++;
+
+			}
+			return retorno;
+
+		}
+	}
+
 	int getTamanho(){
 		return this.tamanho;
 	}

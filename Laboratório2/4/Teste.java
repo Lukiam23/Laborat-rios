@@ -1,7 +1,7 @@
 public class Teste{
 	//Essa classe foi feita para se testar a questão 4 da lista.
 	public static void main(String [] args){
-		Conjunto A = new Conjunto(4);
+		/*Conjunto A = new Conjunto(4);
 		Conjunto B = new Conjunto(2);
 
 		for(int i = 1;i < 5;i++){
@@ -29,7 +29,19 @@ public class Teste{
 		for(int i = 0;i < 4;i++){
 			System.out.printf(produto[i].toStringParOrdenado()+" ");
 		}
-		System.out.printf("\n");
+		System.out.printf("\n");*/
+
+
+		Conjunto conjuntoP = new Conjunto(3);
+		for(int i = 1;i < 4;i++){
+			conjuntoP.inserirElemento(i);
+		}
+		conjuntoP.showElementos();
+
+		Conjunto[] partes = conjuntoP.partes();
+		for(Conjunto c: partes){
+			c.showElementos();
+		}
 
 
 
