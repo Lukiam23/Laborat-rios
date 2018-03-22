@@ -8,4 +8,8 @@ class Colorida{
 	String getCor(){
 		return cor;
 	}
+
+	boolean colorida(){
+		
+	}
 }
