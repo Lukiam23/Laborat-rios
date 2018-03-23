@@ -1,14 +1,17 @@
-public class Conjunto{
+//Essa classe herda de ConjuntoUniverso que é uma classe que pode receber qualquer objeto. 
+public class Conjunto extends ConjuntoUniverso{
 	int tamanho;
 	int[] elementos;
 	int index = 0;
 
 	public Conjunto(int tamanho){
+		super(tamanho);
 		this.tamanho = tamanho;
 		elementos = new int[this.tamanho];
 	}
 
 	boolean inserirElemento(int elemento){
+		//Quando um int é adicionado ele vai para o vetor elementos, já os objetos vão para o vetor qualquerTipo na classe ConjuntoUniverso. 
 		if(verificarPertinencia(elemento) == false){
 			this.elementos[this.index] = elemento;
 			this.index++;
@@ -97,7 +100,7 @@ public class Conjunto{
 		}
 		return diferenca;
 	}
-
+	//Funções auxiliares
 	int getTamanho(){
 		return this.tamanho;
 	}
@@ -111,11 +114,20 @@ public class Conjunto{
 	}
 
 	void showElementos(){
-		//O método criada apenas para printar os elementos do conjunto na tela
+		//O método criada apenas para printar os elementos inteiros deste conjunto na tela.
 		for(int i = 0;i < this.index;i++){
 			System.out.printf(this.elementos[i]+" ");
 		}
 		System.out.printf("\n");
+	}
+
+	public String toString(){
+		String str = "{";
+		for(int i = 0;i < this.index;i++){
+			str += (i==this.index-1)?this.elementos[i]:this.elementos[i]+",";
+		}
+		str += "}";
+		return str;
 	}
 
 	boolean conjuntoVazio(){

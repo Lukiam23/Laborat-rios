@@ -26,7 +26,7 @@ public class Teste{
 		dezPrimeirosPrimos.inserirElemento(13);
 		dezPrimeirosPrimos.inserirElemento(17);
 		dezPrimeirosPrimos.inserirElemento(19);
-		dezPrimeirosPrimos.inserirElemento(23);
+		dezPrimeirosPrimos.inserirElemento("23");
 		
 
 		//Se o conjunto 4 é subconjunto de si mesmo;
@@ -49,7 +49,24 @@ public class Teste{
   		//Qual diferença entre os conjuntos 1 e 2;	
   		Conjunto diferenca = dezPrimeirosNaturais.conjuntoDiferenca(cincoPrimeirosPares);
   		diferenca.showElementos();
-  
+
+  		//Criei uma classe que recebe qualquer tipo.
+  		Conjunto conjuntoMisto = new Conjunto(10);
+  		//Adicionei os tipos.
+  		conjuntoMisto.inserirElemento(1.25);
+  		conjuntoMisto.inserirElemento("UKJ");
+  		conjuntoMisto.inserirElemento(1);
+  		conjuntoMisto.inserirElemento("Por ");
+  		conjuntoMisto.inserirElemento("favor ");
+  		conjuntoMisto.inserirElemento("me dá ");
+  		conjuntoMisto.inserirElemento("uma nota boa");
+  		conjuntoMisto.inserirElemento(dezPrimeirosNaturais);
+  	
+
+  		conjuntoMisto.showElementos();//Esse método vai printar só os elementos inteiros de conjuntoMisto
+  		conjuntoMisto.showElementosObject();//Esse métod irá printar todos os elementos não inteiros de conjunto misto.
+  		
+
   	
 	}
 }
