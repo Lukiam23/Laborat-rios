@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Conjunto{
 	int tamanho;
 	int[] elementos;
@@ -113,29 +115,31 @@ public class Conjunto{
 	}
 
 	Conjunto[] partes(){
-		Conjunto[] retorno = new Conjunto[(int) Math.pow(2,this.index)];
+		ArrayList <Conjunto> retorno = new ArrayList();
 		Conjunto primeiroElemento = new Conjunto(1);
 		primeiroElemento.inserirElemento(this.getElemento(0));
-		retorno[0] = primeiroElemento;
-		int j = 1;
+		retorno.add(primeiroElemento);
+		//Nesse if eu retorno 
 		if(this.index == 1){
-			return retorno;
+			Conjunto[] retornado = new Conjunto[retorno.size()];
+			retorno.toArray(retornado);
+			return retornado;
 		}
+
 		else{
 			Conjunto conjuntoSemPrimeiro = new Conjunto(this.index);
+			
 			for(int i = 1;i < this.index;i++){
 				conjuntoSemPrimeiro.inserirElemento(this.getElemento(i));
 			}
-			//conjuntoSemPrimeiro.showElementos();
+
 			for(Conjunto elemento : conjuntoSemPrimeiro.partes()){
-
-				retorno[j] = elemento;
-				j++;
-				retorno[j] = elemento.conjuntoUniao(primeiroElemento);
-				j++;
-
+				retorno.add(elemento);
+				retorno.add(elemento.conjuntoUniao(primeiroElemento));
 			}
-			return retorno;
+			Conjunto[] retornado = new Conjunto[retorno.size()];
+			retorno.toArray(retornado);
+			return retornado;
 
 		}
 	}
