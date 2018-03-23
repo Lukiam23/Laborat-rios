@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Conjunto{
 	int tamanho;
@@ -114,16 +114,15 @@ public class Conjunto{
 		return produtos;
 	}
 
-	Conjunto[] partes(){
-		ArrayList <Conjunto> retorno = new ArrayList();
+	public List <Conjunto> partes(){
+		List <Conjunto> retorno = new ArrayList <Conjunto>();
 		Conjunto primeiroElemento = new Conjunto(1);
 		primeiroElemento.inserirElemento(this.getElemento(0));
 		retorno.add(primeiroElemento);
 		//Nesse if eu retorno 
 		if(this.index == 1){
 			Conjunto[] retornado = new Conjunto[retorno.size()];
-			retorno.toArray(retornado);
-			return retornado;
+			return retorno;
 		}
 
 		else{
@@ -138,11 +137,10 @@ public class Conjunto{
 				retorno.add(elemento.conjuntoUniao(primeiroElemento));
 			}
 			Conjunto[] retornado = new Conjunto[retorno.size()];
-			retorno.toArray(retornado);
-			return retornado;
+			return retorno;
 
 		}
-	}
+}
 
 	int getTamanho(){
 		return this.tamanho;

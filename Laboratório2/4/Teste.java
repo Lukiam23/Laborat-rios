@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Teste{
 	//Essa classe foi feita para se testar a questão 4 da lista.
@@ -34,12 +34,12 @@ public class Teste{
 		System.out.printf("\n");*/
 
 
-		Conjunto conjuntoP = new Conjunto(10);
-		for(int i = 1;i < 10;i++){
+		Conjunto conjuntoP = new Conjunto(3);
+		for(int i = 1;i < 4;i++){
 			conjuntoP.inserirElemento(i);
 		}
 
-		Conjunto[] partes = conjuntoP.partes();
+		List <Conjunto> partes = conjuntoP.partes();
 		for(Conjunto c: partes){
 			c.showElementos();
 		}
