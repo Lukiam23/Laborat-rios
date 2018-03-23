@@ -121,7 +121,8 @@ public class Conjunto{
 		retorno.add(primeiroElemento);
 		
 		if(this.index == 1){
-			Conjunto[] retornado = new Conjunto[retorno.size()];
+			Conjunto vazio = new Conjunto(0);
+			retorno.add(vazio);
 			return retorno;
 		}
 
@@ -133,8 +134,14 @@ public class Conjunto{
 			}
 
 			for(Conjunto elemento : conjuntoSemPrimeiro.partes()){
-				retorno.add(elemento);
-				retorno.add(elemento.conjuntoUniao(primeiroElemento));
+				if(!elemento.conjuntoVazio()){
+					retorno.add(elemento);
+					retorno.add(elemento.conjuntoUniao(primeiroElemento));
+				}
+				else{
+					retorno.add(elemento);
+				}
+				
 			}
 			Conjunto[] retornado = new Conjunto[retorno.size()];
 			return retorno;
