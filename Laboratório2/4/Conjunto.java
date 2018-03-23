@@ -119,7 +119,7 @@ public class Conjunto{
 		Conjunto primeiroElemento = new Conjunto(1);
 		primeiroElemento.inserirElemento(this.getElemento(0));
 		retorno.add(primeiroElemento);
-		//Nesse if eu retorno 
+		
 		if(this.index == 1){
 			Conjunto[] retornado = new Conjunto[retorno.size()];
 			return retorno;
@@ -160,6 +160,14 @@ public class Conjunto{
 			System.out.printf(this.elementos[i]+" ");
 		}
 		System.out.printf("\n");
+	}
+	String returnElementos(){
+		String str = "{";
+		for(int i = 0;i < this.index;i++){
+			str += (i==this.index-1)?this.elementos[i]:this.elementos[i]+",";
+		}
+		str += "}";
+		return str;
 	}
 
 	boolean conjuntoVazio(){
