@@ -1,4 +1,4 @@
-abstract class Figura extends Colorida{
+abstract class Figura{
 	
 	float x;
 	float y;

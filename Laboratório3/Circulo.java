@@ -1,15 +1,9 @@
 class Circulo extends Figura{
+	
 	float raio;
 
 	Circulo(float x, float y, float raio){
 		super(x,y);
-		super.setCor("Nenhuma")
-		this.raio = raio;
-	}
-
-	Circulo(float x, float y, float raio, String cor){
-		super(x,y);
-		super.setCor(cor);
 		this.raio = raio;
 	}
 
@@ -24,5 +18,9 @@ class Circulo extends Figura{
 
 	double calcularArea(){
 		return raio*raio*3.14;
+	}
+
+	public String toString(){
+		return "Círculo";
 	}
 }

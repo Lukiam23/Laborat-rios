@@ -1,15 +1,10 @@
-class Colorida{
-	String cor;
+public interface Colorida{
+	
 
-	void setCor(String cor){
-		this.cor = cor;
-	}
+	void setCor(String cor);
 
-	String getCor(){
-		return cor;
-	}
+	String getCor();
 
-	boolean colorida(){
-		
-	}
+	boolean colorida();
+
 }
