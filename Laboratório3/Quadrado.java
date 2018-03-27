@@ -1,19 +1,19 @@
-class Quadrado extends Figura{
+class Quadrado extends Figura implements Colorida{
 
 	float lado;
-
-	Quadrado(float x, float y, float lado){
-		super(x,y);
-		super.setCor("Nenhuma");
-		this.lado = lado;
-	}
+	String cor;
 
 	Quadrado(float x, float y, float lado, String cor){
 		super(x,y);
-		super.setCor(cor);
 		this.lado = lado;
+		this.cor = cor;
 	}
 
+	Quadrado(float x, float y, float lado){
+		super(x,y);
+		this.lado = lado;
+		this.cor = "";
+	}
 
 	String desenhar(){
 		return this.toString();
@@ -28,5 +28,22 @@ class Quadrado extends Figura{
 		return lado*lado;
 	}
 
+	@Override
+	public void setCor(String cor){
+		this.cor = cor;
+	}
 
+	@Override
+	public String getCor(){
+		return this.cor;
+	}
+
+	@Override
+	public boolean colorida(){
+		return !cor.equals("");
+	}
+
+	public String toString(){
+		return "Quadrado";
+	}
 }

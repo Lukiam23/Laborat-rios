@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Conjunto{
 	int tamanho;
 	int[] elementos;
@@ -112,6 +114,41 @@ public class Conjunto{
 		return produtos;
 	}
 
+	public List <Conjunto> partes(){
+		List <Conjunto> retorno = new ArrayList <Conjunto>();
+		Conjunto primeiroElemento = new Conjunto(1);
+		primeiroElemento.inserirElemento(this.getElemento(0));
+		retorno.add(primeiroElemento);
+		
+		if(this.index == 1){
+			Conjunto vazio = new Conjunto(0);
+			retorno.add(vazio);
+			return retorno;
+		}
+
+		else{
+			Conjunto conjuntoSemPrimeiro = new Conjunto(this.index);
+			
+			for(int i = 1;i < this.index;i++){
+				conjuntoSemPrimeiro.inserirElemento(this.getElemento(i));
+			}
+
+			for(Conjunto elemento : conjuntoSemPrimeiro.partes()){
+				if(!elemento.conjuntoVazio()){
+					retorno.add(elemento);
+					retorno.add(elemento.conjuntoUniao(primeiroElemento));
+				}
+				else{
+					retorno.add(elemento);
+				}
+				
+			}
+			Conjunto[] retornado = new Conjunto[retorno.size()];
+			return retorno;
+
+		}
+}
+
 	int getTamanho(){
 		return this.tamanho;
 	}
@@ -130,6 +167,14 @@ public class Conjunto{
 			System.out.printf(this.elementos[i]+" ");
 		}
 		System.out.printf("\n");
+	}
+	String returnElementos(){
+		String str = "{";
+		for(int i = 0;i < this.index;i++){
+			str += (i==this.index-1)?this.elementos[i]:this.elementos[i]+",";
+		}
+		str += "}";
+		return str;
 	}
 
 	boolean conjuntoVazio(){

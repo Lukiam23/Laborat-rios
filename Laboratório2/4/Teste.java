@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Teste{
 	//Essa classe foi feita para se testar a questão 4 da lista.
 	public static void main(String [] args){
@@ -17,19 +19,18 @@ public class Teste{
 		}
 		System.out.printf("\n\n");
 		
-		System.out.printf("Conjunto A = {1, 2, 3, 4} ao quadrado: ");
-		produto = A.pordutoCartesiano(A);
-		for(int i = 0;i < 16;i++){
-			System.out.printf(produto[i].toStringParOrdenado()+" ");
+		Conjunto conjuntoP = new Conjunto(3);
+		for(int i = 1;i < 4;i++){
+			conjuntoP.inserirElemento(i);
 		}
-		System.out.printf("\n\n");
-
-		System.out.printf("Conjunto B = {2, 3} ao quadrado: ");
-		produto = B.pordutoCartesiano(B);
-		for(int i = 0;i < 4;i++){
-			System.out.printf(produto[i].toStringParOrdenado()+" ");
+		System.out.printf("Conjunto das partes do conjunto {1,2,3}:");
+		List <Conjunto> partes = conjuntoP.partes();
+		String str = "{ ";
+		for(Conjunto c: partes){
+			str += c.returnElementos()+" ";
 		}
-		System.out.printf("\n");
+		str += "}\n";
+		System.out.printf(str);
 
 
 
