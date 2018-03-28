@@ -18,10 +18,6 @@ public class Basic extends Conta{
 		this.saldo -=valor;
 	}
 
-	double consultarSaldo(){
-		return this.saldo;
-	}
-
 	@Override
 	public String toString(){
 		return "Conta Basic\nId:"+this.numero_conta+"\nSaldo da Conta:"+this.saldo;

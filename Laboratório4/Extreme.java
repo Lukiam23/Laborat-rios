@@ -18,7 +18,8 @@ public class Extreme extends Conta{
 		this.saldo -=valor - (0.002*valor); //Ele restitui 0.2% do valor debitado
 	}
 
-	double consultarSaldo(){
-		return this.saldo;
+	@Override
+	public String toString(){
+		return "Conta Extreme\nId:"+this.numero_conta+"\nSaldo da Conta:"+this.saldo;
 	}
 }

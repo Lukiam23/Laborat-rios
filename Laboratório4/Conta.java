@@ -3,7 +3,6 @@
 public abstract class Conta{
 	int numero_conta; //id
 	double saldo;
-	String tipo;
 
 	Conta(int numero_conta){
 		this(numero_conta,0.0);
@@ -17,7 +16,7 @@ public abstract class Conta{
 	abstract void creditar(double valor);
 	abstract void debitar(double valor);
 
-	double consultarSaldo(int conta){
+	double consultarSaldo(){
 		return this.saldo;
 	}
 

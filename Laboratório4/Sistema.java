@@ -12,28 +12,56 @@ public class Sistema{
 	}
 
 	void criarContaXPTOPlus(int numero_conta){
-		if(!contaExiste(numero_conta)){
+		if(!contaExiste(numero_conta) ){
 			contas[posicao] = new Plus(numero_conta);
 			posicao++;
 		}
 	}
 
 	void criarContaXPTOExtreme(int numero_conta){
-		if(!contaExiste(numero_conta)){
+		if(!contaExiste(numero_conta) ){
 			contas[posicao] = new Extreme(numero_conta);
 			posicao++;
 		}
 	}
 
-	void creditar(int posicao, double valor){
-		contas[posicao].creditar(valor);
+	//Esse método recebe o número da conta e o valor as ser creditado, então ele percorre o vetor contas até a achar uma conta com o mesmo número,
+	//depois de achada ele chama o método ceritar da conta.
+	void creditar(int numero_conta, double valor){
+		for(int i = 0;i < posicao; i++){
+			if(contas[i].getNumeroConta() == numero_conta){
+				contas[i].creditar(valor);
+			}
+		}			
 	}
 
+	//Esse método recebe o número da conta e o valor as ser debitado, então ele percorre o vetor contas até a achar uma conta com o mesmo número,
+	//depois de achada ele chama o método debitar da conta.
+	void debitar(int numero_conta, double valor){
+		for(int i = 0;i < posicao; i++){
+			if(contas[i].getNumeroConta() == numero_conta){
+				contas[i].debitar(valor);
+			}
+		}
+	}
+
+
+	//Esse método percorre o vetor de contas até achar uma conta com o número passad, então ele retorna o saldo daquela conta.
+	//Caso contrário ele retorna -1.
+	double consultarSaldo(int numero_conta){
+		for(int i = 0;i < posicao; i++){
+			if(contas[i].getNumeroConta() == numero_conta){
+				return contas[i].consultarSaldo();
+			}
+		}
+		return -1;
+	}
 	
 
 	//Ele vai iterar sobre os elementos e comparar os numeros de cada conta que há no vetor contas. 
 	//Retornará true se encontrar alguma conta com mesmo número que numero_conta e false caso contrário.
 	boolean contaExiste(int numero_conta){
+		if(contas.length > 0) return false;
 		for(Conta c: contas){
 			if(c.getNumeroConta() == numero_conta){
 				return true;
@@ -41,21 +69,5 @@ public class Sistema{
 		}
 		return false;
 	}
-
-	public static void main (String args[]) {
-		Sistema s = new Sistema();
-		s.criarContaXPTOBasic(1);
-		s.criarContaXPTOPlus(2);
-		s.criarContaXPTOExtreme(3);
-		for(int i = 1; i<=3; i++) s.creditar(i,1000);
-		for(int i = 1; i<=3; i++) s.debitar(i,10);
-		//todas as igualdades devem ser verdadeiras
-		/*s.consultarSaldo(1) == 990;
-		s.consultarSaldo(1) == 995;
-		s.consultarSaldo(1) == 992.02;*/
-
-		System.out.println(990 == 1);
-	}
-
 
 }
