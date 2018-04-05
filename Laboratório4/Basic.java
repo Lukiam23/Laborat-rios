@@ -9,7 +9,7 @@ public class Basic extends Conta{
 		this(numero_conta, 0.0);
 	}
 
-	
+	//Sobrecarga do construtor
 	Basic(int numero_conta, double valor){
 		super(numero_conta, valor);
 	}
