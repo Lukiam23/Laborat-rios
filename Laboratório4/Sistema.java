@@ -6,31 +6,31 @@ public class Sistema{
 
 	void criarContaXPTOBasic(int numero_conta){
 		if(!contaExiste(numero_conta)){
-			contas[posicao] = new Basic(numero_conta);
+			contas[posicao] = new Basic(numero_conta); // Polimorfismo de coerção
 			posicao++;
 		}
 	}
 
 	void criarContaXPTOPlus(int numero_conta){
 		if(!contaExiste(numero_conta) ){
-			contas[posicao] = new Plus(numero_conta);
+			contas[posicao] = new Plus(numero_conta); // Polimorfismo de coerção
 			posicao++;
 		}
 	}
 
 	void criarContaXPTOExtreme(int numero_conta){
 		if(!contaExiste(numero_conta) ){
-			contas[posicao] = new Extreme(numero_conta);
+			contas[posicao] = new Extreme(numero_conta); // Polimorfismo de coerção
 			posicao++;
 		}
 	}
 
-	//Esse método recebe o número da conta e o valor as ser creditado, então ele percorre o vetor contas até a achar uma conta com o mesmo número,
-	//depois de achada ele chama o método ceritar da conta.
+	//Esse método recebe o número da conta e o valor as ser creditado, então ele percorre o vetor contas até achar uma conta com o mesmo número,
+	//depois de achada ele chama o método creditar da conta.
 	void creditar(int numero_conta, double valor){
 		for(int i = 0;i < posicao; i++){
 			if(contas[i].getNumeroConta() == numero_conta){
-				contas[i].creditar(valor);
+				contas[i].creditar(valor);//Polimorfismo de sobrecarga da função creditar
 			}
 		}			
 	}
@@ -40,7 +40,7 @@ public class Sistema{
 	void debitar(int numero_conta, double valor){
 		for(int i = 0;i < posicao; i++){
 			if(contas[i].getNumeroConta() == numero_conta){
-				contas[i].debitar(valor);
+				contas[i].debitar(valor);//Polimorfismo de sobrecarga da função debitar
 			}
 		}
 	}
