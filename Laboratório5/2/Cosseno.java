@@ -1,12 +1,10 @@
-class Cosseno extends Operador{
-	Expression e;
-	Seno(Expression e){
-		this.e =e;
+class Cosseno extends OperadorUnario{
+	Cosseno(Expression e){
+		super(e);
 	}
 
 	@Override
 	public double calcular(){
-		double radianos = Math.toRadianse(e.super.calcular());
-		return Math.cos(radianos);
+		return Math.cos(Math.toRadians(super.calcular()));
 	}
 }

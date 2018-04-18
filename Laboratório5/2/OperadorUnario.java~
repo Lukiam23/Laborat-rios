@@ -1,0 +1,10 @@
+class OperadorUnario extends Operador{
+	OperadorUnario(Expression e){
+		this.e = e;
+	}
+	
+	@Override
+	public double calcular(){
+		return e.calcular();
+	}
+}

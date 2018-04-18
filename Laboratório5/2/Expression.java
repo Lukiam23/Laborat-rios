@@ -1,4 +1,4 @@
 interface Expression{
 	
-	abstract public double calcular();
+	public double calcular();
 }

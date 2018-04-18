@@ -1,6 +1,6 @@
 class Main{
         public static void main(String arg[]){
-                Expression op1, op2, op3, op4, op5;
+                Expressao op1, op2, op3, op4, op5;
 
                 op1 = new Operando(2);
                 op2 = new Divisao();

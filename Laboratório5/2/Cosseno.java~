@@ -1,5 +1,5 @@
-class Seno extends OperadorUnario{	
-	Seno(Expression e){
+class Cosseno extends OperadorUnario{
+	Cosseno(Expression e){
 		super(e);
 	}
 
