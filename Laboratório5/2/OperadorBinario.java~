@@ -1,4 +1,4 @@
-class OperadorBinario extends Operador{
+abstract class OperadorBinario extends Operador{
 	Expression e;
 	Expression d;
 	

@@ -1,4 +1,5 @@
 class OperadorUnario extends Operador{
+	Expression e;
 	OperadorUnario(Expression e){
 		this.e = e;
 	}

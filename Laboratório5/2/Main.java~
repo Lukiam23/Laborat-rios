@@ -5,11 +5,11 @@ class Main{
                 op1 = new Operando(90);
                 op2 = new Seno(op1);
 		
-		System.out.println(Math.toDegrees(op2.calcular()));
+		System.out.println(op2.calcular());
                 
 		op2 = new Cosseno(op1);
 
-		System.out.println(Math.toDegrees(op2.calcular()));
+		System.out.println(op2.calcular());
 
 		op3 = new Operando(1);
 		op4 = new Operando(1);

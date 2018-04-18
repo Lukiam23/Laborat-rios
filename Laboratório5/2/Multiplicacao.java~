@@ -1,5 +1,4 @@
-class Multiplicacao extends Operador{
-	Expression e,d;
+class Multiplicacao extends OperadorBinario{
 
 	Soma(Expression e,Expression d){
 		super(e,d);

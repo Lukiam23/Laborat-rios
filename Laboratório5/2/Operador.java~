@@ -1,3 +1,2 @@
 abstract class Operador implements Expression{
-	Expression e;
 }

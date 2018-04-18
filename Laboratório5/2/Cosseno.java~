@@ -5,6 +5,6 @@ class Cosseno extends OperadorUnario{
 
 	@Override
 	public double calcular(){
-		return Math.sin(Math.toRadians(super.calcular()));
+		return Math.cos(Math.toRadians(super.calcular()));
 	}
 }

@@ -1,9 +1,7 @@
 class Soma extends OperadorBinario{
-	Expression e,d;
 
 	Soma(Expression e,Expression d){
-		this.e = e;
-		this.d = d;
+		super(e,d);
 	}
 
 	@Override

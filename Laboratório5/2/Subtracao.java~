@@ -1,5 +1,4 @@
 class Subtracao extends OperadorBinario{
-	Expression e,d;
 
 	Soma(Expression e,Expression d){
 		super(e,d);
