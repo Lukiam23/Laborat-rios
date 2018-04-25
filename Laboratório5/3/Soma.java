@@ -6,6 +6,7 @@ class Soma extends OperadorBinario{
 
 	@Override
 	public double calcular(){
+		notifyObservers();
 		return esquerda.calcular() + direita.calcular();
 	}
 }

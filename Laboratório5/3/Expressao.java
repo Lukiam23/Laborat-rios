@@ -1,3 +1,3 @@
 abstract class Expressao extends Observable{
-	public double calcular();
+	public abstract double calcular();
 }

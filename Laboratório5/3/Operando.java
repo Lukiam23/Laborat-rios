@@ -1,6 +1,10 @@
 class Operando extends Expressao{
 	private double valor;
 
+	Operando(double valor){
+		this.valor  = valor;
+	}
+
 	double getValor(){
 		return valor;
 	}
@@ -8,10 +12,6 @@ class Operando extends Expressao{
 	void setValor(double valor){
 		this.valor = valor;
 		//notifyObservers();
-	}
-
-	Operando(double valor){
-		this.valor = valor;
 	}
 
 	public double calcular(){

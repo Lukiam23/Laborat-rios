@@ -1,3 +1,5 @@
 abstract class Operador extends Expressao{
-	abstract double calcular();
+	public double calcular(){
+
+	}
 }
