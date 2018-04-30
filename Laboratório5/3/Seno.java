@@ -6,7 +6,8 @@ class Seno extends OperadorUnario{
 
 	@Override
 	public double calcular(){
-		notifyObservers();
-		return Math.sin(this.e.calcular());
+		Operando value = new Operando(Math.sin(this.e.calcular()));
+		notifyObservers(value);
+		return value.getValor();
 	}
 }
