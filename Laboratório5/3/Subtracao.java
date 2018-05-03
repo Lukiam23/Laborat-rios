@@ -6,7 +6,8 @@ class Subtracao extends OperadorBinario{
 
 	@Override
 	public double calcular(){
-		notifyObservers();
-		return esquerda.calcular() - direita.calcular();
+		double value = esquerda.calcular() - direita.calcular();
+		notifyObservers(value);
+		return value;
 	}
 }

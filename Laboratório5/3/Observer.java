@@ -1,4 +1,4 @@
 interface Observer{
 	//update
-	public void imprimir(Expressao e);
+	public void imprimir(double e);
 }
